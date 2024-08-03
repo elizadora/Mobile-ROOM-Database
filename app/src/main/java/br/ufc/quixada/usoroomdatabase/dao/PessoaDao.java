@@ -20,4 +20,6 @@ public interface PessoaDao {
     @Query("SELECT * FROM pessoa")
     List<Pessoa> getAllPessoas();
 
+    @Query("DELETE FROM pessoa")
+    void deleteAll();
 }
