@@ -109,6 +109,9 @@ public class MainActivity extends AppCompatActivity {
                     // add person to database
                     pessoaDao.insertAll(pessoa);
 
+                    // add person pessoasDoBd
+                    pessoasDoBd.add(pessoa);
+
                     // update itemList
                     itemList.add(new Item(nameS, courseS, ageI));
 
@@ -136,6 +139,8 @@ public class MainActivity extends AppCompatActivity {
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 // get position item in recyclerview
                 int position = viewHolder.getAdapterPosition();
+
+                Log.d("SwipeToDelete", "Position: " + position + ", Size of pessoasDoBd: " + pessoasDoBd.size() + ", Size of itemList: " + itemList.size());
 
                 // get person position of pessoasDoBd
                 Pessoa pessoa = pessoasDoBd.get(position);
